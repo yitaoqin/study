@@ -17,6 +17,12 @@ public class P3_1 {
     }
 
     static Map<Integer,Integer> d=new HashMap<>();
+
+    /**
+     * 斐波那契数列
+     * @param n
+     * @return
+     */
     private static int fibonaci(int n){
         int t1,t2,sum;
         if(n==1||n==2){
@@ -32,6 +38,12 @@ public class P3_1 {
             d.put(n,sum);
         return sum;
     }
+
+    /**
+     * 递归阶乘
+     * @param n
+     * @return
+     */
     static long fact(long n){
         if(n<=1L){
             return 1L;
@@ -40,6 +52,13 @@ public class P3_1 {
         }
     }
 
+    /**
+     * 分治算法
+     * @param coin
+     * @param low
+     * @param high
+     * @return
+     */
     static int falseCoin(int[] coin,int low,int high){
         int i,sum1,sum2,sum3;
         int re=0;
@@ -93,6 +112,28 @@ public class P3_1 {
         return re;
     }
 
+    /**
+     * 蒙特卡罗概率算法
+     * @param n
+     * @return
+     */
+    public static double montePI(int n){
+        double PI ;
+        double x,y;
+        int i,sum;
+        sum=0;
+        for ( i = 0; i < n; i++) {
+            x=Math.random();
+            y=Math.random();
+            if((x*x+y*y)<=1){
+                sum++;
+            }
+
+        }
+        PI=4.0*sum/n;
+        System.out.println("蒙特卡罗概率算法："+PI);
+        return PI;
+    }
     public static void main(String[] args) {
         qiongJu(35,94);
         int n=10;
@@ -106,5 +147,6 @@ public class P3_1 {
         int jiabi=falseCoin(coin,0,coin.length-1);
         System.out.println(" 假币是："+jiabi+"重量为："+coin[jiabi-1]);
 
+        montePI(5000000);
     }
 }
