@@ -1,7 +1,11 @@
 # study
 学习时敲的联系代码
 
-core Java核心代码的demo
+core: Java核心代码的demo 
+
+    proxy 动态代理 
+    lambda lambda表达式
+    employee 封装
 
 dataStructure:
 

@@ -1,11 +1,12 @@
 package dataStructure.sort;
 
 import java.util.Arrays;
+import java.util.Random;
 
-public class ShellSort extends BaseSort implements Sort {
+public class ShellSort  implements Sort {
     @Override
     public void execute() {
-        int[] shuzu=getShuzu(50);
+        int[] shuzu=getShuzu(10);
         int len=shuzu.length;
         int i,j,h;
         int r,temp;
@@ -24,6 +25,13 @@ public class ShellSort extends BaseSort implements Sort {
             System.out.println(String.format("%s第%d步排序结果：%s",
                     this.getClass().getName(),x, Arrays.toString(shuzu)));
         }
+    }
+    public int[] getShuzu(int n){
+        int[] shuzu=new int[n];
+        for (int i = 0; i < n; i++) {
+            shuzu[i]= new Random().nextInt(1000);
+        }
+        return shuzu;
     }
     /*public void execute2() {
         int len=shuzu.length;
