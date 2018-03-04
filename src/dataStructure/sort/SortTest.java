@@ -6,6 +6,10 @@ package dataStructure.sort;
 public class SortTest {
     public static void main(String[] args) {
         Sort sort=new BubbleSort();
+        sort=new SelectionSort();
+        sort=new ShellSort();
+//        sort=new InsertionSort();
         sort.execute();
     }
+
 }
