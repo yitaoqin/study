@@ -22,7 +22,7 @@ public class BubbleSort extends BaseSort implements Sort{
                     flag=false;
                 }
             }
-            System.out.println(String.format("第%d步排序结果：%s",i, Arrays.toString(shuzu)));
+//            System.out.println(String.format("第%d步排序结果：%s",i, Arrays.toString(shuzu)));
             if(flag)break;
         }
     }

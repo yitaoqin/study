@@ -9,7 +9,7 @@ core: Java核心代码的demo
 
 dataStructure:
 
-	sort 排序算法：冒泡、选择、插入、shell ...完善中
+	sort 排序算法：冒泡、选择、插入、shell、快速、堆排序 ...完善中
 	suanfa 算法思想：穷举、递推、递归、分治、概率
 	ClType和stackType 数据结构：栈、队列、树
 	

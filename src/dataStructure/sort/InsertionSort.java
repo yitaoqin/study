@@ -14,8 +14,8 @@ public class InsertionSort extends BaseSort implements Sort {
                 j--;
             }
             shuzu[j+1]=t;
-            System.out.println(String.format("%s第%d步排序结果：%s",
-                    this.getClass().getName(),i, Arrays.toString(shuzu)));
+//            System.out.println(String.format("%s第%d步排序结果：%s",
+//                    this.getClass().getName(),i, Arrays.toString(shuzu)));
         }
 
     }

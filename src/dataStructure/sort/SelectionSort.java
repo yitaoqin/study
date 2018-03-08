@@ -21,7 +21,7 @@ public class SelectionSort extends BaseSort implements Sort {
                 shuzu[i]=shuzu[index];
                 shuzu[index]=temp;
             }
-            System.out.println(String.format("%s第%d步排序结果：%s",this.getClass().getName(),i, Arrays.toString(shuzu)));
+//            System.out.println(String.format("%s第%d步排序结果：%s",this.getClass().getName(),i, Arrays.toString(shuzu)));
         }
     }
 }
