@@ -5,8 +5,12 @@ import java.util.Arrays;
 public class HeapSort extends BaseSort implements Sort{
     @Override
     public void execute() {
+        long b=System.currentTimeMillis();
+        int [] shuzu=super.getShuzu(100000);
+        long a=System.currentTimeMillis();
+        System.out.println("数组生产时间："+(a-b));
         heap(shuzu);
-        System.out.println("最终："+ Arrays.toString(shuzu));
+//        System.out.println("最终："+ Arrays.toString(shuzu));
     }
     public void heap(int a[]){
         int n=a.length;
@@ -29,11 +33,11 @@ public class HeapSort extends BaseSort implements Sort{
             }
 
         }
-        System.out.println("原数据构成的堆：");
+        /*System.out.println("原数据构成的堆：");
         for (h = 0; h < n; h++) {
             System.out.print(" " + a[h]);
         }
-        System.out.println();
+        System.out.println();*/
         for(i=n-1;i>0;i--){
             t=a[0];
             a[0]=a[i];
@@ -53,11 +57,11 @@ public class HeapSort extends BaseSort implements Sort{
                 }else {
                     break;
                 }
-                System.out.println("第"+(n-i)+"步排序结果：");
+                /*System.out.println("第"+(n-i)+"步排序结果：");
                 for(h=0;h<n;h++){
                     System.out.print(" "+a[h]);
                 }
-                System.out.println();
+                System.out.println();*/
             }
 
         }

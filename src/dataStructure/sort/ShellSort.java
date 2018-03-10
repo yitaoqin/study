@@ -1,12 +1,18 @@
 package dataStructure.sort;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
 public class ShellSort extends BaseSort implements Sort {
     @Override
     public void execute() {
-        int[] shuzu=getShuzu(10);
+//        int[] shuzu=getShuzu(10);
+        long b=System.currentTimeMillis();
+        int [] shuzu=super.getShuzu(100000);
+        long a=System.currentTimeMillis();
+        System.out.println("数组生产时间："+(a-b));
+
         int len=shuzu.length;
         int i,j,h;
         int r,temp;

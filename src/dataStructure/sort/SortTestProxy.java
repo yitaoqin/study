@@ -1,5 +1,7 @@
 package dataStructure.sort;
 
+import dataStructure.TraceHandler;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -11,27 +13,30 @@ public class SortTestProxy {
         sort=new InsertionSort();//61893
         sort=new ShellSort();//332169
         sort=new QuickSort();//59716
-        sort=new HeapSort();//59716
+//        sort=new HeapSort();//59716
+//        sort=new MergeOneSort();//64071
         InvocationHandler handler=new TraceHandler(sort);
         Sort o=(Sort)Proxy.newProxyInstance(sort.getClass().getClassLoader(),
                 new Class[]{Sort.class},handler);
         o.execute();
     }
-}
-class TraceHandler implements InvocationHandler{
 
-    private Object target;
-    public TraceHandler(Object t){
-        target=t;
-    }
-    @Override
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("proxy="+proxy.getClass().getName());
-        long b=System.nanoTime();
-        System.out.println("before :"+method.getName());
-        Object o=method.invoke(target,args);
-        long a=System.nanoTime();
-        System.out.println("After :"+method.getName()+";totalNanoTime="+(a-b));
-        return o;
-    }
+    /*static class TraceHandler implements InvocationHandler{
+
+        private Object target;
+        public TraceHandler(Object t){
+            target=t;
+        }
+        @Override
+        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+            System.out.println("proxy="+proxy.getClass().getName());
+            long b=System.currentTimeMillis();
+            System.out.println("before :"+method.getName());
+            Object o=method.invoke(target,args);
+            long a=System.currentTimeMillis();
+            System.out.println("After :"+method.getName()+";totalNanoTime="+(a-b));
+            return o;
+        }
+    }*/
 }
+
