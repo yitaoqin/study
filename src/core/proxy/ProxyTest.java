@@ -29,6 +29,12 @@ class TraceHandler implements InvocationHandler{
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        Throwable t=new Throwable();
+        StackTraceElement[] dd=t.getStackTrace();
+        for (StackTraceElement stackTraceElement : dd) {
+            System.out.println(stackTraceElement);
+        }
+
         System.out.print(target);
         System.out.print("."+ method.getName()+"(");
         if(args !=null){
